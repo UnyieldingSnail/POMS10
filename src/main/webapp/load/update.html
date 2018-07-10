@@ -1,28 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <title>User Account - Bootstrap Admin</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-
-    <link href="/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="/css/bootstrap-responsive.min.css" rel="stylesheet"/>
-    <link href="/css/font-awesome.css" rel="stylesheet"/>
-    <link href="/css/adminia.css" rel="stylesheet"/>
-    <link href="/css/adminia-responsive.css" rel="stylesheet"/>
-    <link href="/css/pages/plans.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="/css/style.css"/>
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-</head>
-
-<body>
 <h1 class="page-title">
     <i class="icon-th-large"></i>
     更新数据
@@ -34,56 +9,19 @@
                 <h3>Operation</h3>
             </div> <!-- /widget-header -->
             <div class="widget-content">
-                <div class="tabbable">
-                    <ul class="nav nav-tabs">
-                        <li class="active">
-                            <!--
-                          <a href="#1" data-toggle="tab">Profile</a>
-                          -->
-                        </li>
-                    </ul>
-                    <br/>
-
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="1">
-                            <form id="edit-profile" class="form-horizontal">
-                                <fieldset>
-                                    <section class="">
-                                        <div class="progress">
-                                            <span style="width: 0%;"><span>0%</span></span>
-                                        </div>
-                                        <div class="progress">
-                                            <span style="width: 20%;"><span>20%</span></span>
-                                        </div>
-
-                                        <div class="progress">
-                                            <span class="green" style="width: 40%;"><span>40%</span></span>
-                                        </div>
-
-                                        <div class="progress">
-                                            <span class="orange" style="width: 60%;"><span>60%</span></span>
-                                        </div>
-
-                                        <div class="progress">
-                                            <span class="red" style="width: 80%;"><span>80%</span></span>
-                                        </div>
-
-                                        <div class="progress">
-                                            <span class="blue" style="width: 100%;"><span>100%</span></span>
-                                        </div>
-                                    </section>
-                                    <div class="form-actions">
-                                        <button type="submit" class="btn btn-primary">更新</button>
-                                        <button class="btn">取消</button>
-                                    </div> <!-- /form-actions -->
-                                </fieldset>
-                            </form>
-                        </div>
+                <br/>
+                <div class="tab-content">
+                    <div class="progress schedule">
+                        <span class="blue" style="display: block;width: 100%;"><span>100%</span></span>
+                        <img hidden src="./img/loading.gif"/>
                     </div>
+                    <div class="form-actions">
+                        <button class="btn btn-update">更新</button>
+                        <button class="btn btn-cancel">取消</button>
+                    </div> <!-- /form-actions -->
                 </div>
             </div> <!-- /widget-content -->
         </div> <!-- /widget -->
     </div> <!-- /span9 -->
 </div> <!-- /row -->
-</body>
-</html>
+

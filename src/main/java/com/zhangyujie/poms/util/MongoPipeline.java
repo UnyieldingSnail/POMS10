@@ -23,23 +23,7 @@ public class MongoPipeline implements Pipeline {
 	
 	private void saveSpeech(ResultItems resultItems) {
 
-		List<String> weiboIds = resultItems.get("weiboId");
-		List<String> userIds = resultItems.get("userId");
-		List<String> userNames = resultItems.get("userName");
-		List<String> userGenders = resultItems.get("userGender");
-		List<String> createdAts = resultItems.get("createdAt");
-		List<String> attitudesCounts = resultItems.get("attitudesCount");
-		List<String> commentsCounts = resultItems.get("commentsCount");
-		List<String> repostsCounts = resultItems.get("repostsCount");
 
-		for (int i = 0; i < weiboIds.size(); i++) {
-			dao.save(new Weibo(null, weiboIds.get(i).trim(), userIds.get(i).trim(), userNames.get(i).trim(), 
-					userGenders.get(i).trim(), null, createdAts.get(i).trim(), null,
-					Integer.parseInt(attitudesCounts.get(i).trim()),
-					Integer.parseInt(commentsCounts.get(i).trim()),
-					Integer.parseInt(repostsCounts.get(i).trim())));
-		}
-		
 	}
 	
 	private void saveContent(ResultItems resultItems) {

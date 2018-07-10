@@ -14,8 +14,7 @@
     <context:property-placeholder location="classpath:conf/mongo.properties" />
 
 	<!-- 定义mongo对象，对应的是mongodb官方jar包中的Mongo，replica-set设置集群副本的ip地址和端口 -->
-    <mongo:mongo-client id="mongoClient" host="${mongo.host}" port="${mongo.port}"
-    				credentials="${mongo.username}:${mongo.password}@${mongo.dbname}"/>
+    <mongo:mongo-client id="mongoClient" host="${mongo.host}" port="${mongo.port}"/>
     
 	<mongo:db-factory id="mongoDbFactory" dbname="${mongo.dbname}" mongo-ref="mongoClient"/>
 	

@@ -11,6 +11,10 @@ import org.springframework.stereotype.Repository;
 import com.zhangyujie.poms.entity.Comment;
 import com.zhangyujie.poms.entity.Weibo;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 @Repository("weiboDao")
 public class WeiboDaoImpl implements WeiboDao {
 
@@ -22,9 +26,9 @@ public class WeiboDaoImpl implements WeiboDao {
 		return weibo.getId();
 	}
 
-	public Weibo findAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Weibo> findAll(Integer pageNum) {
+		List<Weibo> weibos = mo.find(Query.query(Criteria.where("repostsCount").exists(true)).skip(pageNum * 10).limit(10), Weibo.class);
+		return weibos;
 	}
 
 	public String insertContent(String weiboId, String content) {
@@ -35,6 +39,25 @@ public class WeiboDaoImpl implements WeiboDao {
 	public String addComments(String weiboId, Comment comment) {
 		mo.updateFirst(Query.query(Criteria.where("weiboId").is(weiboId)), new Update().addToSet("comments", comment), Weibo.class);
 		return weiboId;
+	}
+
+	@Override
+	public Weibo findById(String weiboId) {
+		return mo.findById(weiboId, Weibo.class);
+	}
+
+	@Override
+	public Map<String, Integer> count() {
+		List<Weibo> weibos = mo.find(Query.query(Criteria.where("repostsCount").exists(true)),Weibo.class);
+		Integer weiboNum = weibos.size();
+		Integer repostNum = 0;
+		for (int i = 0; i < weiboNum; i++) {
+			repostNum += weibos.get(i).getRepostsCount();
+		}
+		Map<String, Integer> map = new HashMap<>();
+		map.put("weiboNum", weiboNum);
+		map.put("repostNum", repostNum);
+		return map;
 	}
 
 }

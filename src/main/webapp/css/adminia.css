@@ -416,6 +416,15 @@ input {
 	
 	text-align: center;
 }
+.chevron-up {
+	margin-right: 7px;
+}
+.widget-header {
+	padding-right: 3.5%;
+}
+.widget-table .widget-header a {
+	float: right;
+}
 
 
 
